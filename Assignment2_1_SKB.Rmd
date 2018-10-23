@@ -1,0 +1,154 @@
+---
+title: "Assignment2_Part1_VoiceInSchizophrenia"
+author: "Signe Kirk Brødbæk"
+date: "October 12, 2018"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+setwd("~/Dropbox/AU/3rd semester/EM III/R/EM 3 Assignments/Assignment2/Assignment3_VoiceSchizo")
+
+library(pacman)
+p_load(tidyverse, stringr, Metrics, caret, lme4, simr, stats,lmerTest, stats, FinCal, PerformanceAnalytics, nonlinearTseries,purrr)
+```
+
+## Assignment 2 - Part 1 - Assessing voice in schizophrenia
+
+Schizophrenia has been associated with "inappropriate" voice, sometimes monotone, sometimes croaky. A few studies indicate that pitch might be an index of schizophrenia. However, an ongoing meta-analysis of the literature (which you will have a go at in the last assignment) indicates that pitch mean and standard deviation are only weak indicators of diagnosis. Can we do better with our new fancy complex skills?
+
+The corpus you are asked to analyse is a set of voice recordings from people with schizophrenia (just after first diagnosis) and 1-1 matched controls (on gender, age, education). Each participant watched 10 videos of triangles moving across the screen and had to describe them (so you have circa 10 recordings per person). We have already extracted the pitch once every 10 milliseconds and you will have to use this data to assess differences in the voice.
+
+## Can you characterize voice in schizophrenia as acoustically different? 
+Report the methods you used to answer this question and the results from the analyses. Add a couple of lines trying to interpret the results (make sense of the difference). E.g. People with schizophrenia tend to have high-pitched voice, and present bigger swings in their prosody than controls. Add a couple of lines describing limitations of the data/analyses if any is relevant.
+
+
+N.B. There are looots of files to be dealt with. Maybe too many for your computer, depending on how you load the files. This is a challenge for you. Some (complementary) possible strategies:
+- You can select a subset of files only (and you have to justify your choice).
+- You can learn how to use the apply() or map() functions.
+- You can coordinate with classmates.
+
+Hint: There is some information in the filenames that you might need.
+Hint: It might be a good idea to first create a function which loads and parses one file, and then loop through the list of files to read them all. For example
+
+TRE SPØRGSMÅL:
+- HVAD HVIS 10 TRIALS?
+- FORKERT FORMAT OUTPUT 
+- RANDOM SLOPE/INTERCEPT
+
+
+CTRL + SHIFT + C
+
+```{r}
+read_pitch <- function(filename) {
+#read data  
+  participant <- read.table(str_c("Pitch/",filename), header = TRUE)
+#parse filename; study, diagnosis, subject, trial
+  name = str_match(filename,"Study(\\d+)D([01])S(\\d+)T(\\d+)")
+  clinical = as.data.frame(t(name[2:length(name)]))
+  names(clinical) = c("study","diagnosis","subject","trial")
+#extract descriptors
+  mean <- mean(participant$f0)
+  sd <- sd(participant$f0)
+  min <- min(participant$f0)
+  max <- max(participant$f0)
+  median <- median(participant$f0)
+  iqr <- IQR(participant$f0)
+  mad <- mad(participant$f0)
+  coefvar <- coefficient.variation(sd(participant$f0), mean(participant$f0))
+  data <- data.frame(mean, sd, min, max, median, iqr, mad, coefvar)
+#combine all this data
+return(cbind(clinical,data))
+}
+
+name = "Study1D0S101T1.txt"
+str_match(name,"Study(\\d+)D([01])S(\\d+)T(\\d+)")
+
+# test it on just one file while writing the function
+test_data = read_pitch("Study1D0S101T1_f0.txt")
+
+# when you've created a function that works, you can
+pitch_data = list.files("Pitch/") %>% map_df(read_pitch)
+
+# Make csv
+write.csv(pitch_data, file = "pitch_data.csv")
+
+# Join with demographic data
+
+
+
+colnames(pitch_data)[3] <- "Subject"
+demodata$Subject <- as.character(demodata$Subject)
+
+pitch_demo_data <- right_join(demodata,pitch_data,by="Subject")
+
+# USE SUBJECT AS RANDOM SLOPE - not unique subject (Subject&Diagnosis)
+
+```
+
+1. In the course of this assignment you have to first select one datafile and figure out how to:
+
+- Extract "standard" descriptors of pitch: Mean, standard deviation, range
+- Extract less "standard" descriptors of pitch you can think of (e.g. median, iqr, mean absoluted deviation, coefficient of variation)
+- Extract "complex" descriptors: recurrence quantification analysis
+```{r,include=FALSE}
+# Load one data file 
+p1 <- read.table("Pitch/Study1D0S101T1_f0.txt",header=TRUE)
+p1_ts <- ts(p1)
+# Load demo data
+demodata <- read.table("DemoData.txt",header=TRUE)
+
+# Mean 
+mean(p1$f0)
+# SD 
+sd(p1$f0)
+# range
+range(p1$f0)
+
+# Median
+median(p1$f0)
+# IQR
+IQR(p1$f0)
+# Mean absolute deviation 
+mad(p1$f0)
+# Coefficient of variation
+coefficient.variation(sd(p1$f0), mean(p1$f0))
+# Recurrene quantification analysis 
+rqa.analysis=rqa(time.series = p1_ts, embedding.dim=2, time.lag=1,radius=1.2,lmin=2,do.plot=FALSE,distanceToBorder=2)
+plot(rqa.analysis) # Ask Malte what this means????!
+
+```
+
+2. Second you will have to turn the code into a function and loop through all the files (or even better use apply/sapply/lapply)
+- Remember to extract the relevant information from the file names (Participant, Diagnosis, Trial, Study)
+```{r}
+
+# DONE. Look above
+
+```
+
+3. Make one model per acoustic feature and test whether you can observe significant difference due to Diagnosis. Tip: Which other fixed factors should you control for (that is, include in the model)? Which random ones?
+- Bonus points: cross-validate the model and report the betas and standard errors from all rounds to get an idea of how robust the estimates are. 
+```{r}
+lmer(mean ~ Diagnosis + (1|subject) + (1|study))
+
+# slope|intercept
+
+```
+
+3a. Is study a significant predictor in these models? What should you infer from this? Does study interact with diagnosis? What should you infer from this?
+
+```{r}
+# Study as fixed effect? Significant? Yes/no: What does this mean? Interaction?
+```
+
+4. Bonus Question: Compare effect size of diagnosis across the different measures. Which measure seems most sensitive?
+- Tip: to compare across measures you need to put all of them on the same scale, that is, you need to "standardize" them (z-score)
+
+5. Bonus question. In the Clinical Info file you have additional information about the participants. Which additional parameters (e.g. age, gender) should we control for? Report the effects.
+
+6. Write a paragraph reporting methods and results
+
+[Next assignment: can we use these measures to build a tool that diagnoses people from voice only?]
+
+## N.B. Remember to save the acoustic features of voice in a separate file, so to be able to load them next time

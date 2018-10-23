@@ -64,6 +64,44 @@ plot(rqa.analysis)
 2. Second you will have to turn the code into a function and loop through all the files (or even better use apply/sapply/lapply)
 - Remember to extract the relevant information from the file names (Participant, Diagnosis, Trial, Study)
 
+```{r}
+#making a description function
+description <- function(x, y){
+  mean <- mean(x)
+  sd <- sd(x)
+  range <- range(x)
+  quantile <- quantile(x)
+  iqr <- IQR(x)
+  mad <- MeanAbsoluteDeviation(x)
+  cv <- coefficient.variation(sd=sd(x), avg=mean(x))
+  #rqa.analysis=rqa(time.series = y, embedding.dim=2, time.lag=1,
+#                 radius=1.2,lmin=2,do.plot=FALSE,distanceToBorder=2)
+    d <- c(mean, sd, range, quantile, iqr, mad, cv)
+return(d)
+}
+
+#description(p1$f0, p1.ts)
+
+#listing the files
+pfiles <- list.files(path = "~/Cognitive Science/3. Semester/Experimental Methods 3/Portfolio-2/Pitch", all.files = TRUE)
+
+#removing dots
+pfiles <- pfiles[-c(1, 2)]
+
+#making empty list
+pdata = NULL
+
+for (i in pfiles) {
+  x1 <- read.table(i, sep="\t", header = TRUE)
+  y1<-ts(x)
+  d <- description(x1,y1)
+  pdata[n] = i
+  n = n +1
+}
+
+```
+
+
 3. Make one model per acoustic feature and test whether you can observe significant difference due to Diagnosis. Tip: Which other fixed factors should you control for (that is, include in the model)? Which random ones?
 - Bonus points: cross-validate the model and report the betas and standard errors from all rounds to get an idea of how robust the estimates are. 
 3a. Is study a significant predictor in these models? What should you infer from this? Does study interact with diagnosis? What should you infer from this?
