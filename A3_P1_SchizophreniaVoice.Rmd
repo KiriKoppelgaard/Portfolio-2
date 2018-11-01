@@ -2,7 +2,9 @@
 title: "Assignment2_Part1_VoiceInSchizophrenia"
 author: "Kiri Koppelgaard"
 date: "October 12, 2018"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -64,46 +66,145 @@ plot(rqa.analysis)
 2. Second you will have to turn the code into a function and loop through all the files (or even better use apply/sapply/lapply)
 - Remember to extract the relevant information from the file names (Participant, Diagnosis, Trial, Study)
 
-```{r}
-#making a description function
-description <- function(x, y){
-  mean <- mean(x)
-  sd <- sd(x)
-  range <- range(x)
-  quantile <- quantile(x)
-  iqr <- IQR(x)
-  mad <- MeanAbsoluteDeviation(x)
-  cv <- coefficient.variation(sd=sd(x), avg=mean(x))
-  #rqa.analysis=rqa(time.series = y, embedding.dim=2, time.lag=1,
-#                 radius=1.2,lmin=2,do.plot=FALSE,distanceToBorder=2)
-    d <- c(mean, sd, range, quantile, iqr, mad, cv)
-return(d)
+```{r, include = FALSE}
+read_pitch <- function(filename) {
+#read data  
+  participant <- read.table(str_c("Pitch/",filename), header = TRUE)
+#parse filename; study, diagnosis, subject, trial
+  name = str_match(filename,"Study(\\d+)D([01])S(\\d+)T(\\d+)")
+  clinical = as.data.frame(t(name[2:length(name)]))
+  names(clinical) = c("study","diagnosis","subject","trial")
+#extract descriptors
+  mean <- mean(participant$f0)
+  sd <- sd(participant$f0)
+  min <- min(participant$f0)
+  max <- max(participant$f0)
+  range <- max-min
+  median <- median(participant$f0)
+  iqr <- IQR(participant$f0)
+  mad <- mad(participant$f0)
+  coefvar <- coefficient.variation(sd(participant$f0), mean(participant$f0))
+  data <- data.frame(mean, sd, min, max, range, median, iqr, mad, coefvar)
+#combine all this data
+return(cbind(clinical,data))
 }
 
-#description(p1$f0, p1.ts)
+# when you've created a function that works, you can
+pitch_data = list.files("Pitch/") %>% map_df(read_pitch)
 
-#listing the files
-pfiles <- list.files(path = "~/Cognitive Science/3. Semester/Experimental Methods 3/Portfolio-2/Pitch", all.files = TRUE)
+##Join with demographic data
 
-#removing dots
-pfiles <- pfiles[-c(1, 2)]
+# Load demo data
+setwd("~/Cognitive Science/3. Semester/Experimental Methods 3/Portfolio-2/")
+demodata <- read.table("DemoData.txt",header=TRUE)
+colnames(pitch_data)[3] <- "Subject"
 
-#making empty list
-pdata = NULL
+#mutate new colum with subject id AND diagnosis to distinguish between subjects with and without schizophrenia
+pitch_data <- pitch_data %>%
+  mutate(Sub_Diag = str_c(Subject, diagnosis, sep = ""))
 
-for (i in pfiles) {
-  x1 <- read.table(i, sep="\t", header = TRUE)
-  y1<-ts(x)
-  d <- description(x1,y1)
-  pdata[n] = i
-  n = n +1
-}
+#mutate new colum with renamed diagnosis from demo-data
+demodata$Diagnosis <- ifelse(demodata$Diagnosis == "Control", 0, 1)
+
+demodata <- demodata %>%
+  mutate(Sub_Diag = str_c(Subject, Diagnosis, sep = ""))
+
+#demodata_meta <- subset(demodata, select = -c (SANS, SAPS, Social, NegLang, PosLang, Lang, Triangles, Alogia, FlatAffect, Asociality))
+
+demodata$Subject <- as.character(demodata$Subject)
+
+#merging datafiles in order to obtain the meta-data: gender, age, etc.
+all_pitch <- right_join(demodata, pitch_data, by = c("Sub_Diag", "Subject"))
+
+#reordering for a good look
+colnames(all_pitch)
+all_pitch <- all_pitch%>%select(Sub_Diag, Subject, diagnosis, study, trial, Gender, Age, Education, mean, sd, min, max, range, median, iqr, mad, coefvar, SANS, SAPS, Social, NegLang, PosLang, Lang, Triangles, Alogia, FlatAffect, Asociality)
+
+write.csv(all_pitch, file = "pitch_data.csv")
 
 ```
 
 
 3. Make one model per acoustic feature and test whether you can observe significant difference due to Diagnosis. Tip: Which other fixed factors should you control for (that is, include in the model)? Which random ones?
 - Bonus points: cross-validate the model and report the betas and standard errors from all rounds to get an idea of how robust the estimates are. 
+
+```{r, include = FALSE, eval = FALSE}
+
+model_mean <-lmer(mean ~ Diagnosis + Gender  + (1+trial|Subject.x) + (1+trial|Study), data = all_pitch, REML = FALSE)
+summary(model_mean)
+
+model_range <- lmer(range ~ Diagnosis + Gender  + (1+trial|Subject.x) + (1+trial|Study), data = all_pitch, REML = FALSE)
+summary(model_range)
+
+model_sd <-lmer(sd ~ Diagnosis + Gender  + (1+trial|Subject.x) + (1+trial|Study), data = all_pitch, REML = FALSE)
+summary(model_sd)
+
+model_median <-lmer(median ~ Diagnosis + Gender  + (1+trial|Subject.x) + (1+trial|Study), data = all_pitch, REML = FALSE)
+summary(model_median)
+
+model_iqr <-lmer(iqr ~ Diagnosis + Gender  + (1+trial|Subject.x) + (1+trial|Study), data = all_pitch, REML = FALSE)
+summary(model_iqr)
+
+model_mad <-lmer(mad ~ Diagnosis + Gender  + (1+trial|Subject.x) + (1+trial|Study), data = all_pitch, REML = FALSE)
+summary(model_mad)
+
+model_coefvar <-lmer(coefvar ~ Diagnosis + Gender  + (1+trial|Subject.x) + (1+trial|Study), data = all_pitch, REML = FALSE)
+summary(model_coefvar)
+
+model_min <-lmer(min ~ Diagnosis + Gender  + (1+trial|Subject.x) + (1+trial|Study), data = all_pitch, REML = FALSE)
+summary(model_min)
+
+model_max <-lmer(max ~ Diagnosis + Gender  + (1+trial|Subject.x) + (1+trial|Study), data = all_pitch, REML = FALSE)
+summary(model_max)
+
+mean_model1 <- lmer(mean ~ Diagnosis + Study + Gender + (1+trial|Subject.x),pitch_demo_fulljoin)
+summary(mean_model1) #study = 0.18
+
+mean_model2 <- lmer(mean ~ Diagnosis*Study + Gender + (1+trial|Subject.x),pitch_demo_fulljoin)
+summary(mean_model2) #Diagnosis:Stdy = 0.00847 **, study = 0.02524 *
+
+sd_model1 <- lmer(sd ~ Diagnosis + Study + Gender + (1+trial|Subject.x),pitch_demo_fulljoin)
+summary(sd_model1) #Study = 0.838    
+sd_model2 <- lmer(sd ~ Diagnosis*Study + Gender + (1+trial|Subject.x),pitch_demo_fulljoin)
+summary(sd_model2) #Diagnosis:Stdy =  0.084 ., study = 0.383 
+
+min_model1 <- lmer(min ~ Diagnosis + Study + Gender + (1+trial|Subject.x),pitch_demo_fulljoin)
+summary(min_model1) #Study = 0.344 
+min_model2 <- lmer(min ~ Diagnosis*Study + Gender + (1+trial|Subject.x),pitch_demo_fulljoin)
+summary(min_model2) #Diagnosis:Stdy =  0.288, study = 0.193    
+
+max_model1 <- lmer(max ~ Diagnosis + Study + Gender + (1+trial|Subject.x),pitch_demo_fulljoin)
+summary(max_model1) #Study = 0.0136 * 
+max_model2 <- lmer(max ~ Diagnosis*Study + Gender + (1+trial|Subject.x),pitch_demo_fulljoin)
+summary(max_model2) #Diagnosis:Stdy = 0.000340 *, study = 0.000107 *
+
+median_model1 <- lmer(median ~ Diagnosis + Study + Gender + (1+trial|Subject.x),pitch_demo_fulljoin)
+summary(median_model1) #Study =  0.299  
+median_model2 <- lmer(median ~ Diagnosis*Study + Gender + (1+trial|Subject.x),pitch_demo_fulljoin)
+summary(median_model2) #Diagnosis:Stdy = 0.0314 *, study = 0.0858 . 
+
+iqr_model1 <- lmer(iqr ~ Diagnosis + Study + Gender + (1+trial|Subject.x),pitch_demo_fulljoin)
+summary(iqr_model1) #Study = 0.1283
+iqr_model2 <- lmer(iqr ~ Diagnosis*Study + Gender + (1+trial|Subject.x),pitch_demo_fulljoin)
+summary(iqr_model2) #Diagnosis:Stdy = 0.591, study = 0.416 
+
+mad_model1 <- lmer(mad ~ Diagnosis + Study + Gender + (1+trial|Subject.x),pitch_demo_fulljoin)
+summary(mad_model1) #Study = 0.564  
+mad_model2 <- lmer(mad ~ Diagnosis*Study + Gender + (1+trial|Subject.x),pitch_demo_fulljoin)
+summary(mad_model2) #Diagnosis:Stdy =  0.4718, study = 0.9412  
+
+coefvar_model1 <- lmer(coefvar ~ Diagnosis + Study + Gender + (1+trial|Subject.x) ,pitch_demo_fulljoin)
+summary(coefvar_model1) #Study = 0.447 
+coefvar_model2 <- lmer(coefvar ~ Diagnosis*Study + Gender + (1+trial|Subject.x) ,pitch_demo_fulljoin)
+summary(coefvar_model2) #Diagnosis:Stdy =  4.4e- 0.0803 ., study = 0.7852 
+
+range_model1 <- lmer(range ~ Diagnosis + Study + Gender + (1+trial|Subject.x),pitch_demo_fulljoin)
+summary(range_model1) #Study = 0.0394 * 
+range_model2 <- lmer(range ~ Diagnosis*Study + Gender + (1+trial|Subject.x),pitch_demo_fulljoin)
+summary(range_model2) #Diagnosis:Stdy =  0.00228 *, study = 0.00075 **
+```
+
+
 3a. Is study a significant predictor in these models? What should you infer from this? Does study interact with diagnosis? What should you infer from this?
 
 4. Bonus Question: Compare effect size of diagnosis across the different measures. Which measure seems most sensitive?
@@ -112,6 +213,22 @@ for (i in pfiles) {
 5. Bonus question. In the Clinical Info file you have additional information about the participants. Which additional parameters (e.g. age, gender) should we control for? Report the effects.
 
 6. Write a paragraph reporting methods and results
+
+RESPONSE: 
+Using lmertest to perform a mixed effects analysis of the relationship between the various acoustic features of the recordings of participants and diagnosis of schizophrenia. 
+
+As fixed effects, we entered diagnosis (Control or schizophrenia) and gender into the model. 
+
+As random effects, we had an intercept for subjects and study, as well as a by‐subject random slope for the effect of trial and a by‐study random slope for the effect of trial. 
+
+Testing whether diagnosis is a significant predictor, p-values was obtained using the package LmerTest. We observe a significant impact of diagnosis, when using the model to predict the acoutic features: mean (p-value = 1.08e-15 *), minimum (p-value < 2e-16), max (p-value = 0.049), median (p-value = 3.05e-14), mean absolute deviation (p-value = 3.03e-09), coefficient variance (p-value = 4.4e-11) and range (p-value = 0.0259). Cases, where diagnosis was a non-significant predictor include standard deviation (p-value = 0.13) and interquartile range (p-value = 0.064)
+
+Investigating the main effect and interaction effect between study and diagnosis, we use diagnosis, study and gender as fixed effect and a by‐subject random slope for the effect of trial as random effect.
+
+We find that study is a significant predictor for the main in the models estimating the maximum (p-value = 0.014) and range (p-value = 0.04). This could indicate that there might be a systematic variance between studies, and they conduct the experiments systematically different. 
+
+Furthermore, we find that study significantly interacts with diagnosis in the models estimating the mean (p-value = 0.008), standard deviation (p-value =  0.084), max (p-value = 0.0003), median (p-value = 0.03), mean absolute deviation (p-value = 0.4718), coefficient variance (p-value = 4.4e- 0.08) and range (p-value = 0.002). Thus, in a large number of cases their is  significant interaction between study and diagnosis. This could indicate that the method the patients are given diagnosis could be biased. 
+
 
 [Next assignment: can we use these measures to build a tool that diagnoses people from voice only?]
 
