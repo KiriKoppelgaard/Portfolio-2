@@ -1,7 +1,7 @@
 ---
 title: "Assignment 3 - Part 2 - Diagnosing Schizophrenia from Voice"
-author: "Riccardo Fusaroli"
-date: "October 17, 2017"
+author: "Kiri Koppelgaard"
+date: "November 1, 2018"
 output:
   pdf_document: default
   html_document: default
@@ -9,7 +9,7 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-
+knitr::opts_knit$set(root.dir = normalizePath("C:/Users/Kiri Koppelgaard/Documents/Cognitive Science/3. Semester/Experimental Methods 3/Portfolio 3/Portfolio_3/Assignment4_HeartRate/"))
 ```
 
 ## Assignment 3 - Diagnosing schizophrenia from voice
@@ -18,7 +18,6 @@ In the previous part of the assignment you generated a bunch of "features", that
 In the course of this assignment we will use them to try to automatically diagnose schizophrenia from voice only, that is, relying on the set of features you produced last time, we will try to produce an automated classifier.
 
 ```{r, include = FALSE}
-setwd("~/Cognitive Science/3. Semester/Experimental Methods 3/Portfolio-2/")
 library(pacman)
 p_load(tidyverse, stringr, Metrics, caret, lme4, simr, lmerTest, stats, FinCal, PerformanceAnalytics, nonlinearTseries, GMCM, pROC, createFolds)
 
@@ -519,8 +518,3 @@ You have some additional bonus data involving speech rate, pauses, etc. Include 
 
 ### Bonus question 6
 Logistic regression is only one of many classification algorithms. Try using others and compare performance. Some examples: Discriminant Function, Random Forest, Support Vector Machine, etc. The package caret provides them.
-
-```{r, include = FALSE}
-spell_check_package()
-```
-

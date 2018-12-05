@@ -1,0 +1,284 @@
+"","ACOUST_ANA_DESCR","DESCRIPTION","COMMENTS","frequency","ArticleID","StudyID","Title","Authors","Year_publication","Article","SAMPLE_SIZE_SZ","SAMPLE_SIZE_HC","PITCH_F0_HC_M","PITCH_F0_HC_SD","PITCH_F0_SZ_M","PITCH_F0_SZ_SD","PITCH_F0SD_HC_M","PITCH_F0SD_HC_SD","PITCH_F0SD_SZ_M","PITCH_F0SD_SZ_SD","pitch_f0_variability","yi","vi","CompCases"
+"1","The estimation
+of the prosodic speech profile was performed analyzing
+the variations in the height trajectory and pitch
+perception (prosodic peaks and valleys) of the F0 of the vocalic syllable nuclei that contain voice signals, on a
+peak intensity delimited -3dB and -9dB to left and right,
+respectively, in order to represent the melodic movements
+perceived by the human ear. The value of the
+left limit (–3dB) eliminates most of the microprosodic
+disturbances and stylizes the beginning of the syllable,
+while the right (–9dB) limit preserves the variations in
+tone of accented vowels","Intensity(db), pause rate>300ms, mean F0, f0 sd, f0 range, syllabic dynamics, prosodic peaks, prosodic valleys, intra-syllabic trajectory, inter-syllabic trajectory, phonation tarjectory","They report also f0 range (ST), prosodics peaks and valleys, inta syllabic and phonation trajectory. What we report?","hz",4,"5","Can the Acoustic Analysis of Expressive Prosody Discriminate Schizophrenia?","Martínez-Sánchez F, Muela-Martínez JA, Cortés-Soto P, García Meilán JJ, Vera Ferrándiz JA, Egea Caparrós A, Pujante Valverde IM.",2015,"Martínez-Sánchez et al. (2015)",45,35,156.57,43.89,143.02,40.33,29.67,8.32,27.5,10.36,"hz",-0.225631231042649,0.0511118348712872,TRUE
+"2","1) Pause proportion: Percentage of time the sample contained
+a pitch above baseline from time of first
+utterance to final utterance 2)Duration: Time from beginning to end of a defined
+speech sample
+Beginning and end were determined by
+detecting a change in pitch 3) Attack: Rise in amplitude (loudness) over time
+for a given phoneme 4) Pitch variability: Standard deviation in Hertz of the pitch
+maximum and minimum across an
+utterance, same as the standard deviation
+of the fundamental frequency
+Beginning defined as change in slope
+from baseline
+Occasionally slope changed direction.
+To ensure reproducibility, end defined
+by maximum amplitude 4)","1)SD of min and max pitch F0 across an utterance 2) rise in amplitude of a phonem in in a given time 3) duration of speech sample, determined by change in pitcj 4) pause proprtion ?","Several condition, difficult to figure out how they reported the results. Check with Riccardo.",NA,8,"9","Prosodic abnormalities in schizotypal personality disorder.","Dickey, C. C., Vu, M. A. T., Voglmaier, M. M., Niznikiewicz, M. A., McCarley, R. W., & Panych, L. P.",2012,"Dickey et al. (2012)_1",28,27,NA,NA,NA,NA,79.7282608695652,43.1847826086956,62.7282608695652,44.5695652173913,"sd in hz of the pitch maximum and minimum",-0.381770953899164,0.0740763142171507,TRUE
+"3","We measured blunt affect in terms of inflection,
+which was computed as the standard deviation of the fundamental frequency.1 Alogia was measured as speech
+rate in words per second. This variable was computed as
+the total word count divided by the total length of the
+speech sample with the interviewer’s voice removed. Due
+to variability in recording conditions across subjects we
+were unable to measure vocal emphasis, a component of
+blunt affect","sd F0, speech rate (tot word/tot length)",NA,NA,13,"14","Computerized measurement of negative symptoms in schizophrenia.","Cohen, A. S., Alpert, M., Nienow, T. M., Dinzeo, T. J., & Docherty, N. M.",2008,"Cohen et al. (2008)",60,19,NA,NA,NA,NA,21.56,6.78,17.6426666666667,7.27733333333333,"SD of F0 IN hz",-0.541449235893151,0.0711537346966254,TRUE
+"4","A series of audiorecordings of participants' speech was obtained
+using a Tascam DR-08 recorder set to the following specifications: (1)
+ENCODING: PCM 16-bit 44.1 kHz monaural, (2) LOW CUT: Low 40 Hz,
+(3) REC EQ: Off, (4) microphone folded to a closed position, (5) builtin
+stand open, and (6) device placed on a table in front of the participant
+with the microphone about 12 in from him or her.We used three elicitation
+tasks for spontaneous speech and two for reading aloud, as
+shown in Table 2. Fromthese five types of audiorecorded speech samples, we obtained a
+number of phonetic parameters. The sound files for each of the five tasks
+for each participant started and ended with the participant's voice, excluding the assessor's instructions. The assessorwould sometimes provide
+a prompt (e.g., “Can you say anythingmore about that?”) up to two
+times if a participant stopped short of the two-minute mark for the first
+three speech elicitation activities. Despite the prompts, some participants'
+speaking fell short of two minutes. Recordings longer than two minutes
+were not reduced. The recordings of twelve tasks (from ten subjects)
+were excluded because they were acoustically compromised and it was
+not possible to extract reliable information from them.
+A linguist used the computer programVoiceSauce (Shue, 2010) to extract
+the phonetic linguistic parameter of pitch (F0). Pitch is only present
+when the vocal folds are vibrating, as they are for the articulation of
+vowels (and some consonants). The computer program WaveSurfer
+1.8.8 (Medina and Solorio, 2006) was used to extract intensity readings.
+The pitch (F0) and intensity readings were taken every 10 milliseconds,
+and using those instances in which voicing (vocal fold vibration) was
+present, the following were calculated for each speaker, for each task.
+First, standard deviation of F0 (SD of F0) is variability in pitch (a larger
+number meaning a greater range of pitch during voicing). Second, variability
+in intensity/loudness was computed as an average of the average
+SDs of intensity changes over a 20-second window. For the third and
+fourth measures, the computer program Prosogram (Mertens, 2004) via
+Praat (Boersma and Weenink, 2015) was used to automatically delineate
+the vowels in the audiorecordings. Themidpoint of the vowel resonances
+(F1 and F2)were extracted for every delineated vowel using a Praat script
+(Lennes, 2003), run on audiorecordings of female speakers with the setting
+of five formants expected in the first 5500 Hz, and on the
+audiorecordings of male speakers with the setting of five formants expected
+in the first 5000 Hz. The important resonances for vowels (F1
+and F2) correspond to the shape of various parts of the vocal tract during
+their articulation. Specifically, F1 indicates jaw/mouth opening and thus
+tongue height (tongue height goes along with jaw opening; as the jaw
+drops, the tongue lowers), and F2 corresponds to tongue front/back position
+and/or lip rounding. For each speaker, for each task, we calculated SD
+of F1 and SD of F2. In order to identify datapoints that were outliers, all
+raw measurements were standardized for each speaker across all tasks,
+and datapoints that had a z-score N3.29 or b−3.29 were discarded. Outliers
+were generally of two kinds: spurious values from the automated
+measurements, and data points from the short interjections from the experimenter
+that were present in some tasks.
+For F1 and F2, measurements were converted to Bark, a perceptual
+scale that is essentially linear at lower levels and logarithmic at higher
+levels, reflecting how human perception of Hz works (i.e., a greater increase
+in Hz is needed at higher levels reflecting how human perception of Hz works (i.e., a greater increase
+in Hz is needed at higher levels to get the same perceptual increase).
+For intensity/loudness, we wrote a script that only used
+datapoints that were from definitely voiced segments (“definitely”
+found by not only an F0 (voicing) measurement for that datapoint but
+also for the ones before and after it). Specifically, we computed a moving
+average over a particular length of time, since neither very short
+nor very long variations are of interest (i.e., we were not interested in
+the difference between syllables in the same word, nor loudness
+changes over a period of minutes,which are probably due to the speaker
+getting farther away fromthemicrophone or getting tired). Because this
+was not an a priori variable andwas computed only after the conclusion
+of data collection, we could not be sure that the microphone/recorder
+was placed in the exact same position for participants recruited in
+Washington, D.C. (where several offices with different seating arrangements
+were used for assessments); variation in recorder placement
+could affect intensity/loudness. For this reason, only participants recruited
+from New York were included in the computation of this variable,
+as we were confident that the recorder was consistently placed
+in the same position at those sites.toreflecting how human perception of Hz works (i.e., a greater increase
+in Hz is needed at higher levels to get the same perceptual increase).
+For intensity/loudness, we wrote a script that only used
+datapoints that were from definitely voiced segments (“definitely”
+found by not only an F0 (voicing) measurement for that datapoint but
+also for the ones before and after it). Specifically, we computed a moving
+average over a particular length of time, since neither very short
+nor very long variations are of interest (i.e., we were not interested in
+the difference between syllables in the same word, nor loudness
+changes over a period of minutes,which are probably due to the speaker
+getting farther away fromthemicrophone or getting tired). Because this
+was not an a priori variable andwas computed only after the conclusion
+of data collection, we could not be sure that the microphone/recorder
+was placed in the exact same position for participants recruited in
+Washington, D.C. (where several offices with different seating arrangements
+were used for assessments); variation in recorder placement
+could affect intensity/loudness. For this reason, only participants recruited
+from New York were included in the computation of this variable,
+as we were confident that the recorder was consistently placed
+in the same position at those sites.reflecting how human perception of Hz works (i.e., a greater increase
+in Hz is needed at higher levels to get the same perceptual increase).
+For intensity/loudness, we wrote a script that only used
+datapoints that were from definitely voiced segments (“definitely”
+found by not only an F0 (voicing) measurement for that datapoint but
+also for the ones before and after it). Specifically, we computed a moving
+average over a particular length of time, since neither very short
+nor very long variations are of interest (i.e., we were not interested in
+the difference between syllables in the same word, nor loudness
+changes over a period of minutes,which are probably due to the speaker
+getting farther away fromthemicrophone or getting tired). Because this
+was not an a priori variable andwas computed only after the conclusion
+of data collection, we could not be sure that the microphone/recorder
+was placed in the exact same position for participants recruited in
+Washington, D.C. (where several offices with different seating arrangements
+were used for assessments); variation in recorder placement
+could affect intensity/loudness. For this reason, only participants recruited
+from New York were included in the computation of this variable,
+as we were confident that the recorder was consistently placed
+in the same position at those sites.reflecting how human perception of Hz works (i.e., a greater increase
+in Hz is needed at higher levels to get the same perceptual increase).
+For intensity/loudness, we wrote a script that only used
+datapoints that were from definitely voiced segments (“definitely”
+found by not only an F0 (voicing) measurement for that datapoint but
+also for the ones before and after it). Specifically, we computed a moving
+average over a particular length of time, since neither very short
+nor very long variations are of interest (i.e., we were not interested in
+the difference between syllables in the same word, nor loudness
+changes over a period of minutes,which are probably due to the speaker
+getting farther away fromthemicrophone or getting tired). Because this
+was not an a priori variable andwas computed only after the conclusion
+of data collection, we could not be sure that the microphone/recorder
+was placed in the exact same position for participants recruited in
+Washington, D.C. (where several offices with different seating arrangements
+were used for assessments); variation in recorder placement
+could affect intensity/loudness. For this reason, only participants recruited
+from New York were included in the computation of this variable,
+as we were confident that the recorder was consistently placed
+in the same position at those sites. get the same perceptual increase).
+For intensity/loudness, we wrote a script that only used
+datapoints that were from definitely voiced segments (“definitely”
+found by not only an F0 (voicing) measurement for that datapoint but
+also for the ones before and after it). Specifically, we computed a moving
+average over a particular length of time, since neither very short
+nor very long variations are of interest (i.e., we were not interested in
+the difference between syllables in the same word, nor loudness
+changes over a period of minutes,which are probably due to the speaker
+getting farther away fromthemicrophone or getting tired). Because this
+was not an a priori variable andwas computed only after the conclusion
+of data collection, we could not be sure that the microphone/recorder
+was placed in the exact same position for participants recruited in
+Washington, D.C. (where several offices with different seating arrangements
+were used for assessments); variation in recorder placement
+could affect intensity/loudness. For this reason, only participants recruited
+from New York were included in the computation of this variable,
+as we were confident that the recorder was consistently placed
+in the same position at those sites.","F0 sd",NA,NA,40,"42","The aprosody of schizophrenia: Computationally derived acoustic phonetic underpinnings of monotone speech.","Compton, M. T., Lunden, A., Cleary, S. D., Pauselli, L., Alolayan, Y., Halpern, B., ... & Bernardini, F. (2018).",2018,"Compton et al. (2018)_1",94,101,NA,NA,NA,NA,38.6925650557621,24.7996282527881,37.352962962963,24.157037037037,NA,-0.0544824256394336,0.0205468990859748,TRUE
+"5","reflecting how human perception of Hz works (i.e., a greater increase
+in Hz is needed at higher levels to get the same perceptual increase).
+For intensity/loudness, we wrote a script that only used
+datapoints that were from definitely voiced segments (“definitely”
+found by not only an F0 (voicing) measurement for that datapoint but
+also for the ones before and after it). Specifically, we computed a moving
+average over a particular length of time, since neither very short
+nor very long variations are of interest (i.e., we were not interested in
+the difference between syllables in the same word, nor loudness
+changes over a period of minutes,which are probably due to the speaker
+getting farther away fromthemicrophone or getting tired). Because this
+was not an a priori variable andwas computed only after the conclusion
+of data collection, we could not be sure that the microphone/recorder
+was placed in the exact same position for participants recruited in
+Washington, D.C. (where several offices with different seating arrangements
+were used for assessments); variation in recorder placement
+could affect intensity/loudness. For this reason, only participants recruited
+from New York were included in the computation of this variable,
+as we were confident that the recorder was consistently placed
+in the same position at those sites.","F0 sd",NA,NA,40,"42","The aprosody of schizophrenia: Computationally derived acoustic phonetic underpinnings of monotone speech.","Compton, M. T., Lunden, A., Cleary, S. D., Pauselli, L., Alolayan, Y., Halpern, B., ... & Bernardini, F. (2018).",2018,"Compton et al. (2018)_2",62,68,NA,NA,NA,NA,38.6206278026906,26.795067264574,35.0944186046512,22.1958139534884,NA,-0.141864299667698,0.030912320301468,TRUE
+"6","Subjects’ verbal responses were taped on a
+second Marantz PMD 340 recorder using a
+Shure SM12A microphone mounted on an
+adjustable boom attached to a headset that was
+positioned just to the side of the subjects’ air
+stream. Although detailed acoustic measures
+have been developed to quantify affective
+prosody,50 51 these methods are not necessary
+when analyzing affective prosody in English.
+English speakers impart affect in their speech
+predominantly through changes of pitch over
+time (intonation).13 51 52 The most salient
+acoustic correlate of pitch is fundamental
+frequency (F0), which is equal to the number of
+vocal fold vibrations per unit of time.52 By
+measuring the change of F0 across a series of
+affective utterances, affective prosody can be
+quantified sufficiently so as to easily distinguish
+between normal and abnormal performances.
+7 13
+The subjects’ voice recordings were analyzed
+using a PM Pitch Analyzer (Voice Identification
+Inc) which extracts F0 in Hz from the
+speech signal and displays the data on a
+cathode ray tube. Simultaneously, via a program
+written using Quick Basic and Macro
+Assembler languages (Micosoft, Inc), the F0
+data generated by the pitch analyzer was transferred
+to a personal computer (Gateway, Inc)
+at a sampling rate of 10 ms. By using programmable
+cursors on the pitch analyzer, stray data
+points caused by microphone artifacts, voice
+break-ups, and other sampling errors were
+removed. The computer program then calculated
+a coefficient of variation (CV) for each
+utterance. After all the data were completely
+entered, a mean CV% was calculated for the 12
+sentences (F0-CV%) comprising each affective
+set and for 10 seconds of spontaneous
+speech.7","Pitch F0 sd",NA,NA,45,"47","Affective-prosodic deficits in schizophrenia: profiles of patients with brain damage and comparison with relation to schizophrenic symptoms.","Ross, E. D., Orbelo, D. M., Cartwright, J., Hansel, S., Burgard, M., Testa, J. A., & Buck, R.",2001,"Ross et al. (2001)_1",45,19,NA,NA,NA,NA,17.621,3.273,11.338,4.051,NA,-1.61572429204019,0.0952488401374718,TRUE
+"7","Subjects’ verbal responses were taped on a
+second Marantz PMD 340 recorder using a
+Shure SM12A microphone mounted on an
+adjustable boom attached to a headset that was
+positioned just to the side of the subjects’ air
+stream. Although detailed acoustic measures
+have been developed to quantify affective
+prosody,50 51 these methods are not necessary
+when analyzing affective prosody in English.
+English speakers impart affect in their speech
+predominantly through changes of pitch over
+time (intonation).13 51 52 The most salient
+acoustic correlate of pitch is fundamental
+frequency (F0), which is equal to the number of
+vocal fold vibrations per unit of time.52 By
+measuring the change of F0 across a series of
+affective utterances, affective prosody can be
+quantified sufficiently so as to easily distinguish
+between normal and abnormal performances.
+7 13
+The subjects’ voice recordings were analyzed
+using a PM Pitch Analyzer (Voice Identification
+Inc) which extracts F0 in Hz from the
+speech signal and displays the data on a
+cathode ray tube. Simultaneously, via a program
+written using Quick Basic and Macro
+Assembler languages (Micosoft, Inc), the F0
+data generated by the pitch analyzer was transferred
+to a personal computer (Gateway, Inc)
+at a sampling rate of 10 ms. By using programmable
+cursors on the pitch analyzer, stray data
+points caused by microphone artifacts, voice
+break-ups, and other sampling errors were
+removed. The computer program then calculated
+a coefficient of variation (CV) for each
+utterance. After all the data were completely
+entered, a mean CV% was calculated for the 12
+sentences (F0-CV%) comprising each affective
+set and for 10 seconds of spontaneous
+speech.7","Pitch F0 sd",NA,NA,45,"47","Affective-prosodic deficits in schizophrenia: profiles of patients with brain damage and comparison with relation to schizophrenic symptoms.","Ross, E. D., Orbelo, D. M., Cartwright, J., Hansel, S., Burgard, M., Testa, J. A., & Buck, R.",2001,"Ross et al. (2001)_2",45,19,NA,NA,NA,NA,24.847,2.589,20.269,4.834,NA,-1.05059164640377,0.0834767918531327,TRUE
+"8",NA,NA,NA,"hz",NA,"49",NA,"Kolding, Kirk og Koppelgaard (Riccardo and Malthe)",NA,NA,34,36,NA,NA,NA,NA,24.1003764144648,8.7010669228181,21.949206500302,8.70106692281811,NA,-0.244492031804037,0.0576165164380577,NA
+"9",NA,NA,NA,"hz",NA,"50",NA,"Kolding, Kirk og Koppelgaard (Riccardo and Malthe)",NA,NA,23,23,NA,NA,NA,NA,30.6463594756471,8.70106692281811,28.4951895614843,8.70106692281811,NA,-0.242988295964274,0.0875982968693002,NA
+"10",NA,NA,NA,"hz",NA,"51",NA,"Kolding, Kirk og Koppelgaard (Riccardo and Malthe)",NA,NA,19,16,NA,NA,NA,NA,24.3101104190153,8.7010669228181,22.1589405048525,8.7010669228181,NA,-0.241561574398731,0.115965178864883,NA

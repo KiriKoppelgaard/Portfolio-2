@@ -1,0 +1,28 @@
+"","ACOUST_ANA_DESCR","DESCRIPTION","COMMENTS","frequency","ArticleID","StudyID","Title","Authors","Year_publication","Article","SAMPLE_SIZE_SZ","SAMPLE_SIZE_HC","PITCH_F0_HC_M","PITCH_F0_HC_SD","PITCH_F0_SZ_M","PITCH_F0_SZ_SD","PITCH_F0SD_HC_M","PITCH_F0SD_HC_SD","PITCH_F0SD_SZ_M","PITCH_F0SD_SZ_SD","pitch_f0_variability","yi","vi","CompCases"
+"1","After the recording session, each word was segmented using Praat software. First, voice
+stimuli were normalised according to peak amplitude by means of a Praat script. Audacity
+software was used for noise reduction. Then, stimuli were cut at the beginning and at the
+end of each word, using Praat software. Mean pitch, intensity and duration were subsequently
+calculated for each condition (","F0_min, F0_max, Intensity_M, Words Dur(ms)","For pitch it is also reported the minimum and mazinum F0. We can use them?","hz",1,1,"Emotional self-other voice processing in schizophrenia and its relationship with hallucinations: ERP evidence.","Pinheiro AP, Rezaii N, Rauber A, Nestor PG, Spencer KM, Niznikiewicz M.",2016,"Pinheiro et al. (2016)",17,18,137.246666666667,29.9833333333333,148.043333333333,23.8966666666667,NA,NA,NA,NA,NA,0.387794029720229,0.11652743081713,TRUE
+"2","The estimation
+of the prosodic speech profile was performed analyzing
+the variations in the height trajectory and pitch
+perception (prosodic peaks and valleys) of the F0 of the vocalic syllable nuclei that contain voice signals, on a
+peak intensity delimited -3dB and -9dB to left and right,
+respectively, in order to represent the melodic movements
+perceived by the human ear. The value of the
+left limit (–3dB) eliminates most of the microprosodic
+disturbances and stylizes the beginning of the syllable,
+while the right (–9dB) limit preserves the variations in
+tone of accented vowels","Intensity(db), pause rate>300ms, mean F0, f0 sd, f0 range, syllabic dynamics, prosodic peaks, prosodic valleys, intra-syllabic trajectory, inter-syllabic trajectory, phonation tarjectory","They report also f0 range (ST), prosodics peaks and valleys, inta syllabic and phonation trajectory. What we report?","hz",4,5,"Can the Acoustic Analysis of Expressive Prosody Discriminate Schizophrenia?","Martínez-Sánchez F, Muela-Martínez JA, Cortés-Soto P, García Meilán JJ, Vera Ferrándiz JA, Egea Caparrós A, Pujante Valverde IM.",2015,"Martínez-Sánchez et al. (2015)",45,35,156.57,43.89,143.02,40.33,29.67,8.32,27.5,10.36,"hz",-0.320122809884561,0.0514341421274532,TRUE
+"3","Voice F0 measurements were made
+with Praat Software (P. Boersma & D. Weenink, www.praat.org) on
+recordings of the vowel “a” sampled to exclude transients and adjusted
+to 300 ms in duration.","F0 (ns,mean?) adjusted 300ms in duration",NA,"hz",10,11,"Higher fundamental voice frequency is
+related to extrapyramidal symptoms
+in schizophrenia","Graux, J., Courtine, J. B., Bruneau, N., Camus, V., & El-Hage, W.",2015,"Graux et al. (2011)",26,26,112,14,123,19,NA,NA,NA,NA,NA,0.649198471762499,0.0809755639974881,TRUE
+"4","Each subject participated in two experimental sessions. The
+first session involved the recording of the participant’s voice","Words duratiion, Mean pitch, mean intensity",NA,"hz",27,28,"Emotional self-other voice processing in schizophrenia and its relationship with hallucinations: ERP evidence.","Pinheiro AP, Rezaii N, Rauber A, Nestor PG, Spencer KM, Niznikiewicz M.",2017,"Pinheiro et al. (2017)",15,16,136.383333333333,30.44,148.043333333333,27.5933333333333,NA,NA,NA,NA,NA,0.390212152574297,0.131622562215323,TRUE
+"5",NA,NA,NA,"hz",NA,49,NA,"Kolding, Kirk og Koppelgaard (Riccardo and Malthe)",NA,NA,34,36,144.670955334519,52.8444345567779,158.292234651825,52.8444345567779,24.1003764144648,8.7010669228181,21.949206500302,8.70106692281811,NA,0.254906639002802,0.057653666730858,NA
+"6",NA,NA,NA,"hz",NA,50,NA,"Kolding, Kirk og Koppelgaard (Riccardo and Malthe)",NA,NA,23,23,136.103157366102,52.844434556778,149.724436683407,52.844434556778,30.6463594756471,8.70106692281811,28.4951895614843,8.70106692281811,NA,0.253338848649744,0.0876541366547302,NA
+"7",NA,NA,NA,"hz",NA,51,NA,"Kolding, Kirk og Koppelgaard (Riccardo and Malthe)",NA,NA,19,16,151.898633027808,52.844434556778,165.519912345114,52.844434556778,24.3101104190153,8.7010669228181,22.1589405048525,8.7010669228181,NA,0.251851353141683,0.116037709005644,NA
