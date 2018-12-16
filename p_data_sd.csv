@@ -1,5 +1,5 @@
-"","X.1","X","ACOUST_ANA_DESCR","DESCRIPTION","COMMENTS","frequency","ArticleID","StudyID","Title","Authors","Year_publication","Article","SAMPLE_SIZE_SZ","SAMPLE_SIZE_HC","PITCH_F0_HC_M","PITCH_F0_HC_SD","PITCH_F0_SZ_M","PITCH_F0_SZ_SD","PITCH_F0SD_HC_M","PITCH_F0SD_HC_SD","PITCH_F0SD_SZ_M","PITCH_F0SD_SZ_SD","pitch_f0_variability","yi","vi","CompCases"
-"1",1,1,"The estimation
+"","ACOUST_ANA_DESCR","DESCRIPTION","COMMENTS","frequency","ArticleID","StudyID","Title","Authors","Year_publication","Article","SAMPLE_SIZE_SZ","SAMPLE_SIZE_HC","PITCH_F0_HC_M","PITCH_F0_HC_SD","PITCH_F0_SZ_M","PITCH_F0_SZ_SD","PITCH_F0SD_HC_M","PITCH_F0SD_HC_SD","PITCH_F0SD_SZ_M","PITCH_F0SD_SZ_SD","pitch_f0_variability","yi","vi","CompCases"
+"1","The estimation
 of the prosodic speech profile was performed analyzing
 the variations in the height trajectory and pitch
 perception (prosodic peaks and valleys) of the F0 of the vocalic syllable nuclei that contain voice signals, on a
@@ -10,7 +10,7 @@ left limit (–3dB) eliminates most of the microprosodic
 disturbances and stylizes the beginning of the syllable,
 while the right (–9dB) limit preserves the variations in
 tone of accented vowels","Intensity(db), pause rate>300ms, mean F0, f0 sd, f0 range, syllabic dynamics, prosodic peaks, prosodic valleys, intra-syllabic trajectory, inter-syllabic trajectory, phonation tarjectory","They report also f0 range (ST), prosodics peaks and valleys, inta syllabic and phonation trajectory. What we report?","hz",4,"5","Can the Acoustic Analysis of Expressive Prosody Discriminate Schizophrenia?","Martínez-Sánchez F, Muela-Martínez JA, Cortés-Soto P, García Meilán JJ, Vera Ferrándiz JA, Egea Caparrós A, Pujante Valverde IM.",2015,"Martínez-Sánchez et al. (2015)",45,35,156.57,43.89,143.02,40.33,29.67,8.32,27.5,10.36,"hz",-0.225631231042649,0.0511118348712872,TRUE
-"2",2,2,"1) Pause proportion: Percentage of time the sample contained
+"2","1) Pause proportion: Percentage of time the sample contained
 a pitch above baseline from time of first
 utterance to final utterance 2)Duration: Time from beginning to end of a defined
 speech sample
@@ -25,7 +25,7 @@ from baseline
 Occasionally slope changed direction.
 To ensure reproducibility, end defined
 by maximum amplitude 4)","1)SD of min and max pitch F0 across an utterance 2) rise in amplitude of a phonem in in a given time 3) duration of speech sample, determined by change in pitcj 4) pause proprtion ?","Several condition, difficult to figure out how they reported the results. Check with Riccardo.",NA,8,"9","Prosodic abnormalities in schizotypal personality disorder.","Dickey, C. C., Vu, M. A. T., Voglmaier, M. M., Niznikiewicz, M. A., McCarley, R. W., & Panych, L. P.",2012,"Dickey et al. (2012)_1",28,27,NA,NA,NA,NA,79.7282608695652,43.1847826086956,62.7282608695652,44.5695652173913,"sd in hz of the pitch maximum and minimum",-0.381770953899164,0.0740763142171507,TRUE
-"3",3,3,"We measured blunt affect in terms of inflection,
+"3","We measured blunt affect in terms of inflection,
 which was computed as the standard deviation of the fundamental frequency.1 Alogia was measured as speech
 rate in words per second. This variable was computed as
 the total word count divided by the total length of the
@@ -33,7 +33,7 @@ speech sample with the interviewer’s voice removed. Due
 to variability in recording conditions across subjects we
 were unable to measure vocal emphasis, a component of
 blunt affect","sd F0, speech rate (tot word/tot length)",NA,NA,13,"14","Computerized measurement of negative symptoms in schizophrenia.","Cohen, A. S., Alpert, M., Nienow, T. M., Dinzeo, T. J., & Docherty, N. M.",2008,"Cohen et al. (2008)",60,19,NA,NA,NA,NA,21.56,6.78,17.6426666666667,7.27733333333333,"SD of F0 IN hz",-0.541449235893151,0.0711537346966254,TRUE
-"4",4,4,"A series of audiorecordings of participants' speech was obtained
+"4","A series of audiorecordings of participants' speech was obtained
 using a Tascam DR-08 recorder set to the following specifications: (1)
 ENCODING: PCM 16-bit 44.1 kHz monaural, (2) LOW CUT: Low 40 Hz,
 (3) REC EQ: Off, (4) microphone folded to a closed position, (5) builtin
@@ -179,7 +179,7 @@ could affect intensity/loudness. For this reason, only participants recruited
 from New York were included in the computation of this variable,
 as we were confident that the recorder was consistently placed
 in the same position at those sites.","F0 sd",NA,NA,40,"42","The aprosody of schizophrenia: Computationally derived acoustic phonetic underpinnings of monotone speech.","Compton, M. T., Lunden, A., Cleary, S. D., Pauselli, L., Alolayan, Y., Halpern, B., ... & Bernardini, F. (2018).",2018,"Compton et al. (2018)_1",94,101,NA,NA,NA,NA,38.6925650557621,24.7996282527881,37.352962962963,24.157037037037,NA,-0.0544824256394336,0.0205468990859748,TRUE
-"5",5,5,"reflecting how human perception of Hz works (i.e., a greater increase
+"5","reflecting how human perception of Hz works (i.e., a greater increase
 in Hz is needed at higher levels to get the same perceptual increase).
 For intensity/loudness, we wrote a script that only used
 datapoints that were from definitely voiced segments (“definitely”
@@ -199,7 +199,7 @@ could affect intensity/loudness. For this reason, only participants recruited
 from New York were included in the computation of this variable,
 as we were confident that the recorder was consistently placed
 in the same position at those sites.","F0 sd",NA,NA,40,"42","The aprosody of schizophrenia: Computationally derived acoustic phonetic underpinnings of monotone speech.","Compton, M. T., Lunden, A., Cleary, S. D., Pauselli, L., Alolayan, Y., Halpern, B., ... & Bernardini, F. (2018).",2018,"Compton et al. (2018)_2",62,68,NA,NA,NA,NA,38.6206278026906,26.795067264574,35.0944186046512,22.1958139534884,NA,-0.141864299667698,0.030912320301468,TRUE
-"6",6,6,"Subjects’ verbal responses were taped on a
+"6","Subjects’ verbal responses were taped on a
 second Marantz PMD 340 recorder using a
 Shure SM12A microphone mounted on an
 adjustable boom attached to a headset that was
@@ -239,7 +239,7 @@ entered, a mean CV% was calculated for the 12
 sentences (F0-CV%) comprising each affective
 set and for 10 seconds of spontaneous
 speech.7","Pitch F0 sd",NA,NA,45,"47","Affective-prosodic deficits in schizophrenia: profiles of patients with brain damage and comparison with relation to schizophrenic symptoms.","Ross, E. D., Orbelo, D. M., Cartwright, J., Hansel, S., Burgard, M., Testa, J. A., & Buck, R.",2001,"Ross et al. (2001)_1",45,19,NA,NA,NA,NA,17.621,3.273,11.338,4.051,NA,-1.61572429204019,0.0952488401374718,TRUE
-"7",7,7,"Subjects’ verbal responses were taped on a
+"7","Subjects’ verbal responses were taped on a
 second Marantz PMD 340 recorder using a
 Shure SM12A microphone mounted on an
 adjustable boom attached to a headset that was
@@ -279,12 +279,6 @@ entered, a mean CV% was calculated for the 12
 sentences (F0-CV%) comprising each affective
 set and for 10 seconds of spontaneous
 speech.7","Pitch F0 sd",NA,NA,45,"47","Affective-prosodic deficits in schizophrenia: profiles of patients with brain damage and comparison with relation to schizophrenic symptoms.","Ross, E. D., Orbelo, D. M., Cartwright, J., Hansel, S., Burgard, M., Testa, J. A., & Buck, R.",2001,"Ross et al. (2001)_2",45,19,NA,NA,NA,NA,24.847,2.589,20.269,4.834,NA,-1.05059164640377,0.0834767918531327,TRUE
-"8",8,8,NA,NA,NA,"hz",NA,"49",NA,NA,NA,"Koppelgaard et al",34,36,144.670955334519,52.8444345567779,158.292234651825,52.8444345567779,24.1003764144648,8.7010669228181,21.949206500302,8.70106692281811,NA,-0.244492031804037,0.0576165164380577,NA
-"9",9,9,NA,NA,NA,"hz",NA,"50",NA,NA,NA,"Koppelgaard et al",23,23,136.103157366102,52.844434556778,149.724436683407,52.844434556778,30.6463594756471,8.70106692281811,28.4951895614843,8.70106692281811,NA,-0.242988295964274,0.0875982968693002,NA
-"10",10,10,NA,NA,NA,"hz",NA,"51",NA,NA,NA,"Koppelgaard et al",19,16,151.898633027808,52.844434556778,165.519912345114,52.844434556778,24.3101104190153,8.7010669228181,22.1589405048525,8.7010669228181,NA,-0.241561574398731,0.115965178864883,NA
-"11",11,NA,NA,NA,NA,"hz",NA,"49",NA,NA,NA,"Koppelgaard et al",34,36,144.239464147376,51.0364540227908,157.154202849256,54.7480917159814,22.9906165112341,15.7985231217762,23.1029218000625,29.5419592950506,NA,0.00472709692338151,0.0571897020939839,NA
-"12",12,NA,NA,NA,NA,"hz",NA,"50",NA,NA,NA,"Koppelgaard et al",23,23,117.416819868829,34.7615383529152,134.215336299674,60.5030460691229,30.6316673894374,20.4890091557323,25.7350610163799,47.3645622052455,NA,-0.13188376823353,0.0871455796556899,NA
-"13",13,NA,NA,NA,NA,"hz",NA,"51",NA,NA,NA,"Koppelgaard et al",19,16,166.130241091372,46.6226735018543,148.912115214935,46.6558730671623,26.5041060081689,21.3167247016682,18.5806423187299,12.5760398567416,NA,-0.452423098219476,0.118055674087404,NA
-"14",NA,NA,NA,NA,NA,"hz",NA,"49",NA,NA,NA,"Koppelgaard et al",34,36,144.239464147376,51.0364540227908,157.154202849256,54.7480917159814,22.9906165112341,15.7985231217762,23.1029218000625,29.5419592950506,NA,0.00472709692338151,0.0571897020939839,NA
-"15",NA,NA,NA,NA,NA,"hz",NA,"50",NA,NA,NA,"Koppelgaard et al",23,23,117.416819868829,34.7615383529152,134.215336299674,60.5030460691229,30.6316673894374,20.4890091557323,25.7350610163799,47.3645622052455,NA,-0.13188376823353,0.0871455796556899,NA
-"16",NA,NA,NA,NA,NA,"hz",NA,"51",NA,NA,NA,"Koppelgaard et al",19,16,166.130241091372,46.6226735018543,148.912115214935,46.6558730671623,26.5041060081689,21.3167247016682,18.5806423187299,12.5760398567416,NA,-0.452423098219476,0.118055674087404,NA
+"8",NA,NA,NA,"hz",NA,"49",NA,NA,NA,"Koppelgaard et al",34,36,144.239464147376,51.0364540227908,157.154202849256,54.7480917159814,22.9906165112341,15.7985231217762,23.1029218000625,29.5419592950506,NA,0.00472709692338151,0.0571897020939839,NA
+"9",NA,NA,NA,"hz",NA,"50",NA,NA,NA,"Koppelgaard et al",23,23,117.416819868829,34.7615383529152,134.215336299674,60.5030460691229,30.6316673894374,20.4890091557323,25.7350610163799,47.3645622052455,NA,-0.13188376823353,0.0871455796556899,NA
+"10",NA,NA,NA,"hz",NA,"51",NA,NA,NA,"Koppelgaard et al",19,16,166.130241091372,46.6226735018543,148.912115214935,46.6558730671623,26.5041060081689,21.3167247016682,18.5806423187299,12.5760398567416,NA,-0.452423098219476,0.118055674087404,NA

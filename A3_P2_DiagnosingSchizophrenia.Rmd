@@ -3,13 +3,14 @@ title: "Assignment 3 - Part 2 - Diagnosing Schizophrenia from Voice"
 author: "Kiri Koppelgaard"
 date: "November 1, 2018"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_knit$set(root.dir = normalizePath("C:/Users/Kiri Koppelgaard/Documents/Cognitive Science/3. Semester/Experimental Methods 3/Portfolio 3/Portfolio_3/Assignment4_HeartRate/"))
+options(warn=-1) #turning of warnings
 ```
 
 ## Assignment 3 - Diagnosing schizophrenia from voice
@@ -21,7 +22,9 @@ In the course of this assignment we will use them to try to automatically diagno
 library(pacman)
 p_load(tidyverse, stringr, Metrics, caret, lme4, simr, lmerTest, stats, FinCal, PerformanceAnalytics, nonlinearTseries, GMCM, pROC, createFolds)
 
-pitch_data <- read.csv(file = "pitch_data.csv")
+setwd("C:/Users/Kiri Koppelgaard/Documents/Cognitive Science/3. Semester/Experimental Methods 3/Portfolio-2")
+
+pitch_data <- read.csv("pitch_data.csv")
 
 #NA_pitch_data <- na.omit(pitch_data, col="Study")
 ```
@@ -60,7 +63,7 @@ summary(m2)
 pitch_data$PredictionsPerc=GMCM:::inv.logit(predict(m2))
 pitch_data$Predictions[pitch_data$PredictionsPerc>0.5]="1"
 pitch_data$Predictions[pitch_data$PredictionsPerc<=0.5]="0"
-confusionMatrix(data = pitch_data$Predictions, reference = pitch_data$diagnosis, positive = "1") 
+#confusionMatrix(data = pitch_data$Predictions, reference = pitch_data$diagnosis, positive = "1") 
 
 Accuracy = (326+490)/(326+490+338+185) 
 
